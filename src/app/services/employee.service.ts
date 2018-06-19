@@ -10,7 +10,7 @@ export class EmployeeService {
   Employee: AngularFireObject<any>;
 
   constructor(public af: AngularFireDatabase) {
-    this.employees = this.af.list('/employees') as AngularFireList<Employee[]>;
+    this.employees = this.af.list('/employees/employees') as AngularFireList<Employee[]>;
    }
 
    getEmployees() {
