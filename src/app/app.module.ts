@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { EmployeesComponent } from './components/employees/employees.component';
 
 const appRoutes: Routes = [
   {path: '', component: DashboardComponent},
@@ -51,7 +52,8 @@ const environment = {
     LoginComponent,
     RegisterComponent,
     SettingsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
