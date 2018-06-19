@@ -1,6 +1,11 @@
+import { EmployeeService } from './services/employee.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -21,6 +26,19 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent}
 ];
 
+const environment = {
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyAmuQQi_ykpNQx5Zwc0fD9ldW367zHKLMI',
+    authDomain: 'management-7f8b4.firebaseapp.com',
+    databaseURL: 'https://management-7f8b4.firebaseio.com',
+    projectId: 'management-7f8b4',
+    storageBucket: 'management-7f8b4.appspot.com',
+    messagingSenderId: '929360296746'
+  }
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +56,14 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    EmployeeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
