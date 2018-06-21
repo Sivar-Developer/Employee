@@ -24,6 +24,7 @@ import { EmployeesComponent } from './components/employees/employees.component';
 const appRoutes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'employee/add', component: AddEmployeeComponent},
   {path: 'login', component: LoginComponent}
 ];
 
