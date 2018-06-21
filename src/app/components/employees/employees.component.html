@@ -1,14 +1,20 @@
-<div class="row">
-<div class="card border-dark mb-3" style="max-width: 18rem;" *ngFor="let employee of employees">
-  <div class="card-header">Header</div>
-  <div class="card-body text-dark">
-    <p class="card-text"><b>First Name:</b> {{ employee.firstName }} </p>
-    <p class="card-text"><b>Last Name:</b> {{ employee.lastName }} </p>
-    <p class="card-text"><b>Email:</b> {{ employee.email }} </p>
-    <p class="card-text"><b>Address:</b> {{ employee.country }} , {{ employee.city }} </p>
-    <p class="card-text"><b>Phone:</b> {{ employee.phone }} </p>
-    <p class="card-text"><b>Salary:</b> {{ employee.salary }} </p>
-    <p class="card-text"><b>ID:</b> {{ employee.$key }} </p>
+<div *ngIf="employees.length>0 ; else elseBlock" >
+  <div class="row">
+    <div class="card border-dark mb-3" style="max-width: 18rem;" *ngFor="let employee of employees">
+      <div class="card-header"><b>{{ employee.firstName }} {{ employee.lastName }}</b></div>
+      <div class="card-body text-dark">
+        <p class="card-text"><b>First Name:</b> {{ employee.firstName }} </p>
+        <p class="card-text"><b>Last Name:</b> {{ employee.lastName }} </p>
+        <p class="card-text"><b>Email:</b> {{ employee.email }} </p>
+        <p class="card-text"><b>Address:</b> {{ employee.country }} , {{ employee.city }} </p>
+        <p class="card-text"><b>Phone:</b> {{ employee.phone }} </p>
+        <p class="card-text"><b>Salary:</b> {{ employee.salary }} </p>
+        <p class="card-text"><b>ID:</b> {{ employee.$key }} </p>
+        <p class="card-text"><a href="" class="btn btn-primary"><i class="fa fa-info-circle"></i> More</a></p>
+      </div>
+    </div>
   </div>
 </div>
-</div>
+<ng-template #elseBlock>
+  <h3>No Data Available in Firebase!!</h3>
+</ng-template>
