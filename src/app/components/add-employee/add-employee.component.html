@@ -1,12 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <a href="" class="btn btn-success" routerLink="/">Back to Dashboard</a>
+      <form novalidate #fo='ngForm' (ngSubmit)="mySubmit(fo)">
+        <legend>Add Employee</legend>
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" id="firstname" [(ngModel)]="employee.firstName" #employeefirstName="ngModel" required minlength="4">
+          <div class="alert alert-danger" *ngIf="employeefirstName.error?.required && employeefirstName.touched">First Name is Required</div>
+          <div class="alert alert-danger" *ngIf="employeefirstName.error?.minlength && employeefirstName.touched">First Name at least 4 chars</div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password</label>
+          <input type="password" class="form-control" id="">
+        </div>
+      </form>
     </div>
     <div class="col-sm-6">
-      <p>
-        add-employee works!
-      </p>
+      <a href="" class="btn btn-success" routerLink="/">Back to Dashboard</a>
     </div>
   </div>
 </div>
