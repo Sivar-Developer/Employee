@@ -10,6 +10,8 @@ import { Employee } from './../../Employee';
 export class EmployeesComponent implements OnInit {
 
   employees: Employee[];
+  totalEmployees: number;
+  totalSalarySum: number;
 
   constructor(public employeeService: EmployeeService) { }
 
@@ -17,7 +19,21 @@ export class EmployeesComponent implements OnInit {
     this.employeeService.getEmployees().valueChanges().subscribe(employees => {
         this.employees = employees;
         console.log(this.employees);
+        this.getTotalEmployees();
     });
+  }
+
+  getTotalEmployees() {
+    let total = 0;
+    let totalSalary = 0;
+    for (let index = 0; index < this.employees.length; index++) {
+      total += 1;
+      totalSalary += parseFloat(this.employees[index].salary.toString());
+    }
+    this.totalEmployees = total;
+    this.totalSalarySum = totalSalary;
+    console.log(this.totalEmployees);
+    console.log(this.totalSalarySum);
   }
 
 }
