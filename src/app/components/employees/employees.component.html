@@ -1,4 +1,13 @@
-<div *ngIf="employees.length>0 ; else elseBlock" >
+<div class="row">
+  <div class="col-sm-6">
+    <h2>Total Employees : {{ totalEmployees }}</h2>
+  </div>
+  <div class="col-sm-6">
+    <h2>Total Salary : {{ totalSalarySum | currency: "USD": true }} </h2>
+  </div>
+</div>
+
+<div *ngIf="employees?.length>0 ; else elseBlock" >
   <div class="row">
     <div class="card border-dark mb-3" style="max-width: 18rem;" *ngFor="let employee of employees">
       <div class="card-header"><b>{{ employee.firstName }} {{ employee.lastName }}</b></div>
