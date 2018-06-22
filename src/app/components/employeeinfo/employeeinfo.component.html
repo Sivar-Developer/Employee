@@ -9,7 +9,18 @@
           <p class="card-text"><b>Email:</b> {{ employee.email }} </p>
           <p class="card-text"><b>Address:</b> {{ employee.country }} , {{ employee.city }} </p>
           <p class="card-text"><b>Phone:</b> {{ employee.phone }} </p>
-          <p class="card-text"><b>Salary:</b> {{ employee.salary }} </p>
+          <p class="card-text"><b>Salary:</b> {{ employee.salary | currency:"USD":true }}
+            <button (click)="updateSalaryInput=!updateSalaryInput"><i class="fa fa-pencil"></i></button>
+          </p>
+          <div class="card-text">
+            <form *ngIf="updateSalaryInput" class="form-inline" (submit)="updateSalary()">
+              <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="number" class="form-control" name="" id="">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
           <p class="card-text"><b>ID:</b> {{ employee.ID }} </p>
           <p class="card-text">
             <a href="" class="btn btn-primary mr-2" [routerLink]="['edit-employee/'+id]"><i class="fa fa-pencil"></i> Edit</a>
