@@ -27,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'employee/add', component: AddEmployeeComponent},
   {path: 'employee/:id', component: EmployeeinfoComponent},
+  {path: 'employee/:id/edit', component: EditEmployeeComponent},
   {path: 'login', component: LoginComponent}
 ];
 
