@@ -24,7 +24,7 @@
           <p class="card-text"><b>ID:</b> {{ employee.ID }} </p>
           <p class="card-text">
             <a href="" class="btn btn-primary mr-2" [routerLink]="['edit-employee/'+id]"><i class="fa fa-pencil"></i> Edit</a>
-            <button (click)="myDelete()" class="btn btn-danger" [routerLink]="['edit-employee/'+id]"><i class="fa fa-pencil"></i> Delete</button>
+            <button (click)="myDelete(id)" class="btn btn-danger" [routerLink]="['edit-employee/'+id]"><i class="fa fa-pencil"></i> Delete</button>
           </p>
         </div>
       </div>

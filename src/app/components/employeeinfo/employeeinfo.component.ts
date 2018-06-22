@@ -33,4 +33,11 @@ export class EmployeeinfoComponent implements OnInit {
     this.router.navigate(['/employee/' + this.id]);
   }
 
+  myDelete() {
+    if (confirm('Are you sure?')) {
+      this.employeeService.deleteEmployee(this.id);
+      this.router.navigate(['/']);
+    }
+  }
+
 }
