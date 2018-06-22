@@ -14,6 +14,7 @@ export class EmployeeinfoComponent implements OnInit {
   employee: Employee;
   hasSalary = false;
   updatedSalary = false;
+  showSalaryUpdate = false;
   constructor(public employeeService: EmployeeService, public router: Router, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,6 +26,11 @@ export class EmployeeinfoComponent implements OnInit {
       this.employee = employee;
       console.log(this.employee);
     });
+  }
+
+  updateSalaryEmployee(id: string) {
+    this.employeeService.updateEmployee(this.id, this.employee);
+    this.router.navigate(['/employee/' + this.id]);
   }
 
 }

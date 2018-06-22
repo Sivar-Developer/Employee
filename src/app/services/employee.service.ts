@@ -25,4 +25,8 @@ export class EmployeeService {
      this.employee = this.af.object('/employees/employees/' + id) as AngularFireObject<Employee>;
      return this.employee;
    }
+
+   updateEmployee(id: string, employee: Employee) {
+     return this.employees.update(id, employee);
+  }
 }

@@ -13,10 +13,10 @@
             <button (click)="updateSalaryInput=!updateSalaryInput"><i class="fa fa-pencil"></i></button>
           </p>
           <div class="card-text">
-            <form *ngIf="updateSalaryInput" class="form-inline" (submit)="updateSalary()">
+            <form *ngIf="updateSalaryInput" class="form-inline" (submit)="updateSalaryEmployee(id)">
               <div class="form-group">
                 <label for="salary">Salary</label>
-                <input type="number" class="form-control" name="" id="">
+                <input type="number" class="form-control" name="salary" id="salary" [(ngModel)]="employee.salary">
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
