@@ -1,5 +1,7 @@
-import { Employee } from './../../Employee';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Employee } from './../../Employee';
+import { EmployeeService } from './../../services/employee.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -17,16 +19,19 @@ export class AddEmployeeComponent implements OnInit {
     phone: 0,
     salary: 0
   };
-  constructor() { }
+  constructor(public employeeService: EmployeeService, public router: Router) { }
 
   ngOnInit() {
   }
 
   mySubmit({value, valid}: {value: Employee, valid: boolean}) {
     if (!valid) {
-      console.log('not correct data');
+      this.router.navigate(['employee/add']);
+      // console.log('not correct data');
     } else {
-      console.log(this.employee);
+      this.employeeService.addEmployee(value);
+      this.router.navigate(['/']);
+      // console.log(this.employee);
     }
   }
 

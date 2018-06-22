@@ -5,13 +5,13 @@
         <legend>Add Employee</legend>
         <div class="form-group">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control" name="firstname" id="firstname" [(ngModel)]="employee.firstName" #employeefirstName="ngModel" required minlength="4">
+          <input type="text" class="form-control" name="firstName" id="firstname" [(ngModel)]="employee.firstName" #employeefirstName="ngModel" required minlength="4">
           <div class="alert alert-danger" *ngIf="employeefirstName.errors?.required && employeefirstName.touched">First Name is Required</div>
           <div class="alert alert-danger" *ngIf="employeefirstName.errors?.minlength && employeefirstName.touched">First Name at least 4 chars</div>
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control" name="lastname" id="lastname" [(ngModel)]="employee.lastName" #employeelastName="ngModel" required minlength="4">
+          <input type="text" class="form-control" name="lastName" id="lastname" [(ngModel)]="employee.lastName" #employeelastName="ngModel" required minlength="4">
           <div class="alert alert-danger" *ngIf="employeelastName.errors?.required && employeelastName.touched">Last Name is Required</div>
           <div class="alert alert-danger" *ngIf="employeelastName.errors?.minlength && employeelastName.touched">Last Name at least 4 chars</div>
         </div>
