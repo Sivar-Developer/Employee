@@ -7,7 +7,7 @@ import { Employee } from './../Employee';
 export class EmployeeService {
 
   employees: AngularFireList<any>;
-  Employee: AngularFireObject<any>;
+  employee: AngularFireObject<any>;
 
   constructor(public af: AngularFireDatabase) {
     this.employees = this.af.list('/employees/employees') as AngularFireList<Employee[]>;
@@ -19,5 +19,10 @@ export class EmployeeService {
 
    addEmployee(employee: Employee) {
      return this.employees.push(employee);
+   }
+
+   getEmployee(id: string) {
+     this.employee = this.af.object('/employees/employees/' + id) as AngularFireObject<Employee>;
+     return this.employee;
    }
 }

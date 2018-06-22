@@ -1,3 +1,21 @@
-<p>
-  employeeinfo works!
-</p>
+  <br><br><br>
+  <div class="pt-50">
+    <div class="row">
+      <div class="card border-dark mb-3" style="max-width: 50rem;">
+        <div class="card-header"><b>{{ employee.firstName }} {{ employee.lastName }}</b></div>
+        <div class="card-body text-dark">
+          <p class="card-text"><b>First Name:</b> {{ employee.firstName }} </p>
+          <p class="card-text"><b>Last Name:</b> {{ employee.lastName }} </p>
+          <p class="card-text"><b>Email:</b> {{ employee.email }} </p>
+          <p class="card-text"><b>Address:</b> {{ employee.country }} , {{ employee.city }} </p>
+          <p class="card-text"><b>Phone:</b> {{ employee.phone }} </p>
+          <p class="card-text"><b>Salary:</b> {{ employee.salary }} </p>
+          <p class="card-text"><b>ID:</b> {{ employee.ID }} </p>
+          <p class="card-text">
+            <a href="" class="btn btn-primary mr-2" [routerLink]="['edit-employee/'+id]"><i class="fa fa-pencil"></i> Edit</a>
+            <button (click)="myDelete()" class="btn btn-danger" [routerLink]="['edit-employee/'+id]"><i class="fa fa-pencil"></i> Delete</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

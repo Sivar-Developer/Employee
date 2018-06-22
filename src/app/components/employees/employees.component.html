@@ -18,8 +18,8 @@
         <p class="card-text"><b>Address:</b> {{ employee.country }} , {{ employee.city }} </p>
         <p class="card-text"><b>Phone:</b> {{ employee.phone }} </p>
         <p class="card-text"><b>Salary:</b> {{ employee.salary }} </p>
-        <p class="card-text"><b>ID:</b> {{ employee.$key }} </p>
-        <p class="card-text"><a href="" class="btn btn-primary"><i class="fa fa-info-circle"></i> More</a></p>
+        <p class="card-text"><b>ID:</b> {{ employee.ID }} </p>
+        <p class="card-text"><a href="" class="btn btn-primary" [routerLink]="['employee/'+employee.ID]"><i class="fa fa-info-circle"></i> More</a></p>
       </div>
     </div>
   </div>
