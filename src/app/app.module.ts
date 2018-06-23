@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { EmployeeService } from './services/employee.service';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -69,7 +70,8 @@ const environment = {
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    EmployeeService
+    EmployeeService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,7 @@
     <div class="card-body text-primary">
       <h5 class="card-title">Please fill the form to login</h5>
       <div class="card-text">
-          <form>
+          <form (submit)="mySubmit()">
             <div class="form-group">
               <label for="email">Email address</label>
               <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required [(ngModel)]="email">
